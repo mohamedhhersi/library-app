@@ -15,9 +15,12 @@ function Book({ book }) {
         </a>
       </div>
       <div className="book__ratings">
-        {new Array(4).fill(0).map((_, index) => (
+        {new Array(Math.floor(book.rating)).fill(0).map((_, index) => (
           <FontAwesomeIcon icon="star" key={index} />
         ))}
+        {!Number.isInteger(book.rating) && (
+          <FontAwesomeIcon icon="star-half-alt" />
+        )}
       </div>
       <div className="book__price">
         {book.salePrice ? (
@@ -29,7 +32,7 @@ function Book({ book }) {
             $ {book.originalPrice.toFixed(2)}
           </>
         ) : (
-          <>{book.originalPrice.toFixed(2)}</>
+          <>${book.originalPrice.toFixed(2)}</>
         )}
       </div>
     </div>
