@@ -3,8 +3,6 @@ import Book from "./ui/Book";
 import { books } from "../data";
 
 function Featured() {
-  console.log(books);
-
   return (
     <div>
       <section id="features">
