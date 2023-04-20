@@ -44,7 +44,7 @@ function Nav() {
             </Link>
           </li>
           <li className="menu__list">
-            <Link to="" className="menu__link">
+            <Link to="/books" className="menu__link">
               Books
             </Link>
           </li>
