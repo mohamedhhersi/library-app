@@ -3,11 +3,19 @@ import { Link, useParams } from "react-router-dom";
 import Rating from "../components/ui/Rating";
 import Price from "../components/ui/Price";
 import Book from "../components/ui/Book";
+import { useState } from "react";
 
-function BookInfo({ books }) {
+function BookInfo({ books, addToCart, cart }) {
   const { id } = useParams();
   const book = books.find((book) => +book.id == +id);
-  console.log(book);
+
+  function addBookToCart(book) {
+    addToCart(book);
+  }
+
+  function bookExistsOnCart() {
+    return cart.find((book) => book.id === +id);
+  }
 
   return (
     <div id="books__body">
@@ -50,7 +58,15 @@ function BookInfo({ books }) {
                     optio doloremque nisi quae unde!
                   </p>
                 </div>
-                <button className="btn">Add to cart</button>
+                {bookExistsOnCart() ? (
+                  <Link to={`/cart`} className="book__link">
+                    <button className="btn">Checkout</button>
+                  </Link>
+                ) : (
+                  <button onClick={() => addBookToCart(book)} className="btn">
+                    Add to cart
+                  </button>
+                )}
               </div>
             </div>
           </div>
