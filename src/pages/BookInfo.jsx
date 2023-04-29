@@ -9,10 +9,11 @@ function BookInfo({ books, addToCart, cart }) {
   const { id } = useParams();
   const book = books.find((book) => +book.id == +id);
 
+  // add book to cart
   function addBookToCart(book) {
     addToCart(book);
   }
-
+  // check if book exists
   function bookExistsOnCart() {
     return cart.find((book) => book.id === +id);
   }
@@ -58,6 +59,7 @@ function BookInfo({ books, addToCart, cart }) {
                     optio doloremque nisi quae unde!
                   </p>
                 </div>
+                {/* add check out button if book exists, otherwise use add to cart */}
                 {bookExistsOnCart() ? (
                   <Link to={`/cart`} className="book__link">
                     <button className="btn">Checkout</button>

@@ -7,6 +7,13 @@ export const books = [
     originalPrice: 49.95,
     salePrice: 14.95,
     rating: 4.5,
+    para: `"Cracking the Coding Interview" is a popular book written by Gayle Laakmann McDowell 
+    that provides guidance on how to prepare for technical coding interviews. The book covers a range of 
+    topics, including data structures and algorithms, problem-solving techniques, system design, 
+    and more. It also includes over 150 programming interview questions, 
+    along with solutions and explanations. The book is widely used as a resource for software engineers 
+    and other professionals looking to improve their coding interview skills and land their dream job in 
+    the tech industry.`,
   },
   {
     id: 2,
