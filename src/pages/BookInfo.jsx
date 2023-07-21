@@ -3,11 +3,11 @@ import { Link, useParams } from "react-router-dom";
 import Rating from "../components/ui/Rating";
 import Price from "../components/ui/Price";
 import Book from "../components/ui/Book";
-import { useState } from "react";
+// import { useState } from "react";
 
 function BookInfo({ books, addToCart, cart }) {
   const { id } = useParams();
-  const book = books.find((book) => +book.id == +id);
+  const book = books.find((book) => +book.id === +id);
 
   // add book to cart
   function addBookToCart(book) {
@@ -33,7 +33,7 @@ function BookInfo({ books, addToCart, cart }) {
             </div>
             <div className="book__selected">
               <figure className="book__selected--figure">
-                <img src={book.url} className="book__selected--img" />
+                <img src={book.url} className="book__selected--img" alt="" />
               </figure>
               <div className="book__selected--description">
                 <h2 className="book__selected--title">{book.title}</h2>

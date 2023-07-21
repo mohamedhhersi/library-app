@@ -1,4 +1,4 @@
-import Landing from "./components/Landing";
+// import Landing from "./components/Landing";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
